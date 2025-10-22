@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matrimonial Bio Data Form</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <main class="container">
+    <h1>Matrimonial Bio Data</h1>
+
+    <form id="biodataForm" novalidate>
+      <section class="grid">
+        <label>
+          Full Name *
+          <input type="text" id="name" name="name" required minlength="2" />
+          <small class="error" id="err-name"></small>
+        </label>
+
+        <label>
+          Email *
+          <input type="email" id="email" name="email" required />
+          <small class="error" id="err-email"></small>
+        </label>
+
+        <label>
+          Mobile (10 digits) *
+          <input type="tel" id="mobile" name="mobile" inputmode="numeric" maxlength="10" required />
+          <small class="error" id="err-mobile"></small>
+        </label>
+
+        <label>
+          Age *
+          <input type="number" id="age" name="age" min="18" max="80" required />
+          <small class="error" id="err-age"></small>
+        </label>
+
+        <label>
+          Gender *
+          <select id="gender" name="gender" required>
+            <option value="">Select…</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+          <small class="error" id="err-gender"></small>
+        </label>
+
+        <label>
+          Religion
+          <input type="text" id="religion" name="religion" />
+        </label>
+
+        <label>
+          Occupation
+          <input type="text" id="occupation" name="occupation" />
+        </label>
+
+        <label class="full">
+          Address
+          <textarea id="address" name="address" rows="3"></textarea>
+        </label>
+
+        <label class="full">
+          About Me
+          <textarea id="about" name="about" rows="4" placeholder="Write a short bio…"></textarea>
+        </label>
+      </section>
+
+      <div class="actions">
+        <button type="submit">Submit</button>
+        <button type="reset" class="secondary">Reset</button>
+      </div>
+
+      <p id="success" class="success" hidden>Form submitted successfully ✅</p>
+    </form>
+  </main>
+
+  <script src="validate.js"></script>
+</body>
+</html>
